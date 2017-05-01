@@ -3,6 +3,6 @@ package se.kth.iv1350.inspection.controller;
 public class Controller {
 	
 	public Controller(){
-		int x = 2;
+		int x = 3;
 	}
 }
