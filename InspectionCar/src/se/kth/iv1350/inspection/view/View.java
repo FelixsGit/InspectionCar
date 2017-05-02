@@ -16,5 +16,6 @@ public class View {
 		controller.closeDoor();
 		controller.printReceipt();
 		controller.printInspectionResults();
+		controller.verifyVehicle("AFK442");
 	}
 }
