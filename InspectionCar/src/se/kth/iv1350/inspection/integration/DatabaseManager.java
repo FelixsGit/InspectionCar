@@ -11,5 +11,14 @@ public class DatabaseManager {
 		return database.fetchInspection(vehicle);
 	}
 	
+	public String findInspectionChecklist(Vehicle vehicle){
+		return database.fetchInspectionChecklist(vehicle);
+	}
+	public void storeCurrentResult(String currentCompletedInspection){
+		database.saveCurrentResult(currentCompletedInspection);
+	}
+	public void findFinnalResult(Vehicle vehicle){
+		database.printFinnalResults(vehicle);
+	}
 
 }

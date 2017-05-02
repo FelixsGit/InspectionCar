@@ -5,10 +5,9 @@ import se.kth.iv1350.inspection.model.CreditCard;
 
 public class PaymentAuthorizationSystem {
 
-	private CreditCard CreditCard;
 
-	public boolean requestPayment(CreditCard creditCard, Cost cost){
-		this.CreditCard = creditCard;
+	public boolean requestPayment(CreditCard creditCard, Double cost){
+		System.out.println("");
 		return true;
 		
 	}
