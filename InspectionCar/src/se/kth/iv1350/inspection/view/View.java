@@ -14,5 +14,7 @@ public class View {
 		controller.updateDisplay(120);
 		controller.openDoor();
 		controller.closeDoor();
+		controller.printReceipt();
+		controller.printInspectionResults();
 	}
 }
