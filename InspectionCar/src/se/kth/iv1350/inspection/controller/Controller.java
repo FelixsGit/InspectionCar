@@ -10,8 +10,7 @@ import se.kth.iv1350.inspection.model.Receipt;
 import se.kth.iv1350.inspection.model.RegistrationNumber;
 import se.kth.iv1350.inspection.model.Vehicle;
 import se.kth.iv1350.inspection.model.CreditCard;
-import se.kth.iv1350.inspection.model.InspectionChecklist;
-import se.kth.iv1350.inspection.model.Cost;
+
 
 
 public class Controller {
@@ -30,8 +29,8 @@ public class Controller {
 	}
 	
 	public void newInspection(int number){
-		garage.openDoor();
 		garage.updateDisplay(number);
+		garage.openDoor();
 	}
 	
 	public double registerCashPayment(double cost, double amountPayed){

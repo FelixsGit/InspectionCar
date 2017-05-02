@@ -11,7 +11,6 @@ public class View {
 		this.controller = controller;
 	}
 	
-	private String[] inspections;
 	/**
 	 * Thise Vehicles are in queue outside the garage, only one can be inspected at the same time, you choose who!
 	 */
@@ -21,13 +20,13 @@ public class View {
 	private static String fourthVehicle = "NPC999"; //Vehical not in system
 	
 	public void testSystemOperations(){
-		
-		controller.newInspection(10);
-		controller.registerCashPayment(1000, 1200);
-		controller.verifyVehicle(thirdVehicle);
-		controller.registerCardPayment(6534, "412 421 465 245", "Felix", 0317, 554, (double) 1000);
-		controller.fetchNextInspectionAndStoreResults(thirdVehicle);
-		controller.enterCurrentResult(thirdVehicle);
+		//Diffrent SystemOperations.
+		controller.newInspection(1);//number update display with
+		controller.registerCashPayment(1000, 1200); //what the inspection cost, what the constumer payed
+		controller.verifyVehicle(firstVehicle); //checks with database if this vehicle exists
+		controller.registerCardPayment(6534, "412 421 465 245", "Felix", 0317, 554, (double) 1000); //the awesome guys creditcard information
+		controller.fetchNextInspectionAndStoreResults(firstVehicle); 
+		controller.enterCurrentResult(firstVehicle);
 		
 	}
 }
