@@ -2,20 +2,20 @@ package se.kth.iv1350.inspection.view;
 
 import se.kth.iv1350.inspection.controller.Controller;
 
+
 public class View {
 	
-	private Controller controller;
+	private final Controller controller;
 	
 	public View(Controller controller){
 		this.controller = controller;
 	}
 	
 	public void testSystemOperations(){
-		controller.updateDisplay(120);
-		controller.openDoor();
-		controller.closeDoor();
-		controller.printReceipt();
+		controller.newInspection(10);
 		controller.printInspectionResults();
-		controller.verifyVehicle("AFK442");
+		controller.registerCashPayment(1000, 1200);
+		controller.verifyVehicle("ELF523");
+		//controller.registerCardPayment(6534, "412 421 465 245", "Felix", 0317, 554, (double) 1000);
 	}
 }
