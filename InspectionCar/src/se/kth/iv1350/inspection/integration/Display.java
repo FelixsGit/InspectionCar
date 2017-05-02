@@ -4,5 +4,6 @@ public class Display {
 	
 	public void updateDisplay(int number){
 		//Updates the display with the number "number"
+		System.out.println("Display has been updated with number: "+number);
 	}
 }

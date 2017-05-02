@@ -10,9 +10,15 @@ public class Controller {
 	
 	public Controller(){
 		
+	}
+	public void closeDoor(){
 		garage.closeDoor();
+	}
+	
+	public void openDoor(){
 		garage.openDoor();
-		
-		display.updateDisplay(120);
+	}
+	public void updateDisplay(int number){
+		display.updateDisplay(number);
 	}
 }

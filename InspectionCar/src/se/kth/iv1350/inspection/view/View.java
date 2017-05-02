@@ -9,4 +9,10 @@ public class View {
 	public View(Controller controller){
 		this.controller = controller;
 	}
+	
+	public void testSystemOperations(){
+		controller.updateDisplay(120);
+		controller.openDoor();
+		controller.closeDoor();
+	}
 }
