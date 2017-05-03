@@ -37,7 +37,7 @@ public class DatabaseManager {
 	}
 	/**
 	 * 
-	 * @param vehicle. Vehicle with a specific registrationNumber is entered to find the correspoding finnal inspection result
+	 * @param vehicle. Vehicle with a specific registrationNumber is entered to find the correspoding finnal inspection result.
 	 * @return Returns the corresponding finnal resolts for the given vehicle. 
 	 */
 	public String findFinnalResult(Vehicle vehicle){

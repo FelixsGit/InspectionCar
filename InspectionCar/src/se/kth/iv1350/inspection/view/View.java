@@ -5,6 +5,9 @@ import se.kth.iv1350.inspection.controller.Controller;
 
 public class View {
 	
+	/** 
+	 * This Class is responsible for Controller calls, Controller class can only be called from here.
+	 */
 	private final Controller controller;
 	
 	/**
@@ -18,7 +21,7 @@ public class View {
 	/**
 	 * Thise Vehicles are in queue outside the garage, only one can be inspected at the same time, you choose who!
 	 */
-	 private static String currentVehicleToInspect = "ELF523"; 
+	 private static String currentVehicleToInspect = "NPC999"; 
 			 										//"ELF523";  Registerd vehical 
 	 											    //"LKF245"	 Registerd vehical
 	 											    //"LDK424"	 Registerd vehical

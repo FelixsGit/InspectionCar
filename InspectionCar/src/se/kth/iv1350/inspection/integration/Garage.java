@@ -1,7 +1,9 @@
 package se.kth.iv1350.inspection.integration;
 
 public class Garage {
-	
+	/**
+	 * this class handels the "gargae system" and its operations. 
+	 */
 	public void openDoor(){
 		//close the garage door
 		System.out.println("Door has been opened");

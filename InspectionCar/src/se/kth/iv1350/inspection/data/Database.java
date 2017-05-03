@@ -2,31 +2,43 @@ package se.kth.iv1350.inspection.data;
 
 import java.util.Arrays;
 
-import se.kth.iv1350.inspection.integration.Printer;
 import se.kth.iv1350.inspection.model.Vehicle;
 
 public class Database {
 	
+	/**
+	 * This Databse class represents a virtual database.
+	 */
+	// These integered is in the loop that saves and stores specific inspections
 	public int currentInspectionCounter = 0;
 	public int saveCurrentInspectionCounter = 0;
-
+	
+	// The cost the costumer is paying for the inspection.
 	public static final double cost = 1000;
 	
+	// These three vehicals are stores in here.
 	Vehicle vehicle = new Vehicle("ELF523");
 	Vehicle vehicle1 = new Vehicle("LKF245");
 	Vehicle vehicle2 = new Vehicle("LDK424");
 	
-	private String[] inspectionChecklist = {"check oil","check windows","check lights"};
-	private String[] inspectionChecklist1 = {"check oil","check seats","check wheels"};
-	private String[] inspectionChecklist2 = {"check oil","check engine","check dashboard"};
-	private String[] noCheckListFound = {"Vehicle not in system."};
+	//Diffrent Inspection checklists for diffrent vehicals 
+	private final String[] inspectionChecklist = {"check oil","check windows","check lights"};
+	private final String[] inspectionChecklist1 = {"check oil","check seats","check wheels"};
+	private final String[] inspectionChecklist2 = {"check oil","check engine","check dashboard"};
+	private final String[] noCheckListFound = {"Vehicle not in system."};
 	
-	private String[] inspectionsCompleted = new String[inspectionChecklist.length];
-	private String[] inspectionsCompleted1 = new String[inspectionChecklist.length];
-	private String[] inspectionsCompleted2 = new String[inspectionChecklist.length];
+	//Diffrent Inspection results lists to store the inspections result. 
+	private final String[] inspectionsCompleted = new String[inspectionChecklist.length];
+	private final String[] inspectionsCompleted1 = new String[inspectionChecklist.length];
+	private final String[] inspectionsCompleted2 = new String[inspectionChecklist.length];
 	
-	public String finnalResults;
+	private String finnalResults;
 	
+	/**
+	 * 
+	 * @param vehicle. The object vehical that contains the car register number.
+	 * @return if there is a match it will return the cost of the inspection, if not null. 
+	 */
 	public double fetchInspection(Vehicle vehicle){
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
 			System.out.println("inspections found! Your cost is: "+cost);
@@ -43,11 +55,12 @@ public class Database {
 		else
 			return 0;
 	}
-	public static void storeResults(boolean passed){
-		
-	}
-	public String fetchInspectionChecklist(Vehicle vehicle){
-		
+	/**
+	 * 
+	 * @param vehicle . The object that contains the car register number.
+	 * @return returns the next inspection to do. 
+	 */
+	public String fetchInspectionChecklist(Vehicle vehicle){	
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
 			System.out.println("Your inspections are: "+ Arrays.toString(inspectionChecklist));
 			for(int i = currentInspectionCounter;i < inspectionChecklist.length; i++){
@@ -86,6 +99,11 @@ public class Database {
 			return  Arrays.toString(noCheckListFound);
 		
 	}
+	/**
+	 * 
+	 * @param currentCompletedInspection. The inspections that was just performed
+	 * @return The finnal results of the completed inspections
+	 */
 	public String saveCurrentResult(String currentCompletedInspection) {
 		for(int i = saveCurrentInspectionCounter; i<inspectionChecklist.length; i++){
 			inspectionsCompleted[i] = currentCompletedInspection;
@@ -96,9 +114,14 @@ public class Database {
 			break;
 		}
 		finnalResults = Arrays.toString(inspectionsCompleted);
-		return Arrays.toString(inspectionsCompleted);	
+		return finnalResults;	
 	}
-	
+	/**
+	 * 
+	 * @param vehicle. The object that contains the registernumber
+	 * @return the finnal results of the completed inspectionlinked linked to the vehical given in the parameter. If the database dont have any 
+	 * finnal results <code>"No results found"<code> will be returned. 
+	 */
 	public String collectFinnalResults(Vehicle vehicle){
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
 			return finnalResults;
