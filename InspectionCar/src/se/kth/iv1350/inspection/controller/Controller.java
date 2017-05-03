@@ -19,7 +19,7 @@ public class Controller {
 	DatabaseManager databaseManager = new DatabaseManager();
 	PaymentAuthorizationSystem paymentAuthorizationSystem = new PaymentAuthorizationSystem();
 	
-	
+	//.
 	public Controller(){
 		
 	}
@@ -27,6 +27,7 @@ public class Controller {
 	public void newInspection(int number){
 		garage.updateDisplay(number);
 		garage.openDoor();
+		garage.closeDoor();
 	}
 	
 	public double registerCashPayment(double cost, double amountPayed){
@@ -56,9 +57,11 @@ public class Controller {
 		databaseManager.storeCurrentResult(currentCompletedInspection);
 		
 	}
-	public void enterCurrentResult(String registrationNumber){
+	public void printCurrentResult(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
-		databaseManager.findFinnalResult(vehicle);
+		String finnalResults = databaseManager.findFinnalResult(vehicle);
+		printer.printResult(finnalResults, registrationNumber);
+		
 		
 	}
 	

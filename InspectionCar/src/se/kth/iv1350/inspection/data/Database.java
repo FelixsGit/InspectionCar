@@ -10,7 +10,7 @@ public class Database {
 	public int currentInspectionCounter = 0;
 	public int saveCurrentInspectionCounter = 0;
 
-	private static double cost = 1000;
+	public static final double cost = 1000;
 	
 	Vehicle vehicle = new Vehicle("ELF523");
 	Vehicle vehicle1 = new Vehicle("LKF245");
@@ -26,6 +26,7 @@ public class Database {
 	private String[] inspectionsCompleted2 = new String[inspectionChecklist.length];
 	
 	public String finnalResults;
+	
 	public double fetchInspection(Vehicle vehicle){
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
 			System.out.println("inspections found! Your cost is: "+cost);
@@ -98,16 +99,16 @@ public class Database {
 		return Arrays.toString(inspectionsCompleted);	
 	}
 	
-	public void printFinnalResults(Vehicle vehicle){
-		Printer printer = new Printer();
+	public String collectFinnalResults(Vehicle vehicle){
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			printer.printResult(finnalResults, this.vehicle.getRegistrationNumber());
+			return finnalResults;
 		}
 		if(this.vehicle1.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			printer.printResult(finnalResults, this.vehicle1.getRegistrationNumber());
+			return finnalResults;
 		}
 		if(this.vehicle2.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			printer.printResult(finnalResults, this.vehicle2.getRegistrationNumber());
+			return finnalResults;
 		}
+		return "No results found";
 	}
 }

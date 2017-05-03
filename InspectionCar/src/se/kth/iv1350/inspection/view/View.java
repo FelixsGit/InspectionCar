@@ -7,6 +7,10 @@ public class View {
 	
 	private final Controller controller;
 	
+	/**
+	 * 
+	 * @param controller. The object controller. 
+	 */
 	public View(Controller controller){
 		this.controller = controller;
 	}
@@ -14,7 +18,7 @@ public class View {
 	/**
 	 * Thise Vehicles are in queue outside the garage, only one can be inspected at the same time, you choose who!
 	 */
-	 private static String currentVehicleToInspect = "LDK424"; 
+	 private static String currentVehicleToInspect = "ELF523"; 
 			 										//"ELF523";  Registerd vehical 
 	 											    //"LKF245"	 Registerd vehical
 	 											    //"LDK424"	 Registerd vehical
@@ -27,7 +31,7 @@ public class View {
 		controller.verifyVehicle(currentVehicleToInspect); //checks with database if this vehicle exists
 		controller.registerCardPayment(6534, "412 421 465 245", "Felix", 0317, 554, (double) 1000); //creditcard information
 		controller.fetchNextInspectionAndStoreResults(currentVehicleToInspect); 
-		controller.enterCurrentResult(currentVehicleToInspect);
+		controller.printCurrentResult(currentVehicleToInspect);
 		
 	}
 }
