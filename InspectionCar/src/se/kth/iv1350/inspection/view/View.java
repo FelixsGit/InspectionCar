@@ -21,7 +21,7 @@ public class View {
 	/**
 	 * Thise Vehicles are in queue outside the garage, only one can be inspected at the same time, you choose who!
 	 */
-	 private static String currentVehicleToInspect = "NPC999"; 
+	 private static String currentVehicleToInspect = "ELF523"; 
 			 										//"ELF523";  Registerd vehical 
 	 											    //"LKF245"	 Registerd vehical
 	 											    //"LDK424"	 Registerd vehical

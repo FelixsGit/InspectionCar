@@ -66,7 +66,7 @@ public class Database {
 			for(int i = currentInspectionCounter;i < inspectionChecklist.length; i++){
 				String nextInspection = inspectionChecklist[i];
 				System.out.println("The next Inspection are: "+nextInspection);
-				System.out.println("working on--------"+nextInspection+"--------");
+				System.out.println("working on---------------"+nextInspection+"--------");
 				currentInspectionCounter++;
 				return nextInspection;
 			}
@@ -77,7 +77,7 @@ public class Database {
 			for(int i = currentInspectionCounter;i < inspectionChecklist1.length; i++){
 				String nextInspection = inspectionChecklist1[i];
 				System.out.println("The next Inspection are: "+nextInspection);
-				System.out.println("working on--------"+nextInspection+"--------");
+				System.out.println("working on---------------"+nextInspection+"--------");
 				currentInspectionCounter++;
 				return nextInspection;
 			}
@@ -88,7 +88,7 @@ public class Database {
 			for(int i = currentInspectionCounter;i < inspectionChecklist2.length; i++){
 				String nextInspection = inspectionChecklist2[i];
 				System.out.println("The next Inspection are: "+nextInspection);
-				System.out.println("working on--------"+nextInspection+"--------");
+				System.out.println("working on---------------"+nextInspection+"--------");
 				currentInspectionCounter++;
 				return nextInspection;
 			}
@@ -106,9 +106,8 @@ public class Database {
 	 */
 	public String saveCurrentResult(String currentCompletedInspection) {
 		for(int i = saveCurrentInspectionCounter; i<inspectionChecklist.length; i++){
-			inspectionsCompleted[i] = currentCompletedInspection;
-			System.out.println("saving results for-------inspectionNumber "+(i+1)+"--------");
-			System.out.println("inspection Number "+(i+1)+" saved");
+			inspectionsCompleted[i] = currentCompletedInspection + " -pass";
+			System.out.println("saving results for-------"+currentCompletedInspection+"--------");
 			System.out.println();
 			saveCurrentInspectionCounter++;
 			break;
