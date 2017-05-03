@@ -11,7 +11,7 @@ public class Garage {
 	
 	public void closeDoor(){
 		//opens the garage door
-		System.out.println("Door has been closed");
+		System.out.println("\nDoor has been closed");
 	}
 	/**
 	 * 

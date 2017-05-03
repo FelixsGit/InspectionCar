@@ -5,7 +5,7 @@ public class CashRegister {
 	/**
 	 * This class represent a cash register 
 	 */
-	public double cashInRegister = 10000; 
+	private double cashInRegister = 10000; 
 	
 	/**
 	 * 

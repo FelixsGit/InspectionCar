@@ -41,15 +41,15 @@ public class Database {
 	 */
 	public double fetchInspection(Vehicle vehicle){
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			System.out.println("inspections found! Your cost is: "+cost);
+			System.out.println("\ninspections found! Your cost is: "+cost);
 			return cost;
 		}
 		if(this.vehicle1.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			System.out.println("inspections found! Your cost is: "+cost);
+			System.out.println("\ninspections found! Your cost is: "+cost);
 			return cost;
 		} 
 		if(this.vehicle2.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			System.out.println("inspections found! Your cost is: "+cost);
+			System.out.println("\ninspections found! Your cost is: "+cost);
 			return cost;
 		}
 		else
@@ -62,7 +62,7 @@ public class Database {
 	 */
 	public String fetchInspectionChecklist(Vehicle vehicle){	
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			System.out.println("Your inspections are: "+ Arrays.toString(inspectionChecklist));
+			System.out.println("\nYour inspections are: "+ Arrays.toString(inspectionChecklist));
 			for(int i = currentInspectionCounter;i < inspectionChecklist.length; i++){
 				String nextInspection = inspectionChecklist[i];
 				System.out.println("The next Inspection are: "+nextInspection);
@@ -72,7 +72,7 @@ public class Database {
 			return "No more inspections left";
 		}
 		if(this.vehicle1.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			System.out.println("Your inspections are: "+ Arrays.toString(inspectionChecklist1));
+			System.out.println("}nYour inspections are: "+ Arrays.toString(inspectionChecklist1));
 			for(int i = currentInspectionCounter;i < inspectionChecklist1.length; i++){
 				String nextInspection = inspectionChecklist1[i];
 				System.out.println("The next Inspection are: "+nextInspection);
@@ -82,7 +82,7 @@ public class Database {
 			return "No more inspections left";
 		}
 		if(this.vehicle2.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			System.out.println("Your inspections are: "+ Arrays.toString(inspectionChecklist2));
+			System.out.println("\nYour inspections are: "+ Arrays.toString(inspectionChecklist2));
 			for(int i = currentInspectionCounter;i < inspectionChecklist2.length; i++){
 				String nextInspection = inspectionChecklist2[i];
 				System.out.println("The next Inspection are: "+nextInspection);
@@ -92,7 +92,7 @@ public class Database {
 			return "No more inspections left";
 		}
 		else
-			System.out.println(Arrays.toString(noCheckListFound));
+			System.out.println("\n"+Arrays.toString(noCheckListFound));
 			return  Arrays.toString(noCheckListFound);
 		
 	}
@@ -105,7 +105,6 @@ public class Database {
 		for(int i = saveCurrentInspectionCounter; i<inspectionChecklist.length; i++){
 			inspectionsCompleted[i] = currentCompletedInspection + " -PASS";
 			System.out.println("saving results for-------"+currentCompletedInspection+"--------");
-			System.out.println();
 			saveCurrentInspectionCounter++;
 			break;
 		}

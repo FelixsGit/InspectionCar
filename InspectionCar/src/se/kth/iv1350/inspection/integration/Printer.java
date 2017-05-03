@@ -12,7 +12,6 @@ public class Printer {
 	 */
 	
 	public void printReceipt(Receipt receipt){
-		//Prints the receipt
 		System.out.println("A receipt has been printed");
 	}
 	
@@ -22,7 +21,6 @@ public class Printer {
 	 * @param registrationNumber. The registration number on the inspected vehicle
 	 */
 	public void printResult(String finnalInspectionResult, String registrationNumber){
-		//prints the inspectionresults
-		System.out.println("All results for the inspections :"+finnalInspectionResult+" has been printed for Vehicle: " +registrationNumber+".");
+		System.out.println("\nAll results for the inspections :"+finnalInspectionResult+" has been printed for Vehicle: " +registrationNumber+".");
 	}
 }

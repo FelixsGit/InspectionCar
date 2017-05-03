@@ -28,7 +28,6 @@ public class View {
 	 											    //"NPC999"   Vehical not in database
 	
 	public void testSystemOperations(){
-		//Diffrent SystemOperations.
 		controller.newInspection(1);//number update display with
 		controller.registerCashPayment(1000, 1200); //what the inspection cost, what the constumer payed
 		controller.verifyVehicle(currentVehicleToInspect); //checks with database if this vehicle exists
