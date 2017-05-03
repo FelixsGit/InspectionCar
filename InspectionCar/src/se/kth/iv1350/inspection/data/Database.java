@@ -19,7 +19,7 @@ public class Database {
 	private String[] inspectionChecklist = {"check oil","check windows","check lights"};
 	private String[] inspectionChecklist1 = {"check oil","check seats","check wheels"};
 	private String[] inspectionChecklist2 = {"check oil","check engine","check dashboard"};
-	private String[] noCheckListFound = {""};
+	private String[] noCheckListFound = {"Vehicle not in system."};
 	
 	private String[] inspectionsCompleted = new String[inspectionChecklist.length];
 	private String[] inspectionsCompleted1 = new String[inspectionChecklist.length];
@@ -48,7 +48,6 @@ public class Database {
 	public String fetchInspectionChecklist(Vehicle vehicle){
 		
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			
 			System.out.println("Your inspections are: "+ Arrays.toString(inspectionChecklist));
 			for(int i = currentInspectionCounter;i < inspectionChecklist.length; i++){
 				String nextInspection = inspectionChecklist[i];
@@ -102,13 +101,13 @@ public class Database {
 	public void printFinnalResults(Vehicle vehicle){
 		Printer printer = new Printer();
 		if(this.vehicle.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			printer.printResult(finnalResults);
+			printer.printResult(finnalResults, this.vehicle.getRegistrationNumber());
 		}
 		if(this.vehicle1.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			printer.printResult(finnalResults);
+			printer.printResult(finnalResults, this.vehicle1.getRegistrationNumber());
 		}
 		if(this.vehicle2.getRegistrationNumber().equals(vehicle.getRegistrationNumber())){
-			printer.printResult(finnalResults);
+			printer.printResult(finnalResults, this.vehicle2.getRegistrationNumber());
 		}
 	}
 }

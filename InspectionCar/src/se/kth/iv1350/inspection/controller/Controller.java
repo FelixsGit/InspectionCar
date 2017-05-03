@@ -5,9 +5,7 @@ import se.kth.iv1350.inspection.integration.DatabaseManager;
 import se.kth.iv1350.inspection.integration.Garage;
 import se.kth.iv1350.inspection.integration.PaymentAuthorizationSystem;
 import se.kth.iv1350.inspection.integration.Printer;
-import se.kth.iv1350.inspection.model.InspectionResult;
 import se.kth.iv1350.inspection.model.Receipt;
-import se.kth.iv1350.inspection.model.RegistrationNumber;
 import se.kth.iv1350.inspection.model.Vehicle;
 import se.kth.iv1350.inspection.model.CreditCard;
 
@@ -18,8 +16,6 @@ public class Controller {
 	CashRegister cashRegister = new CashRegister();
 	Garage garage = new Garage();
 	Printer printer = new Printer();
-	InspectionResult inspectionResult= new InspectionResult();
-	RegistrationNumber registrationNumber = new RegistrationNumber();
 	DatabaseManager databaseManager = new DatabaseManager();
 	PaymentAuthorizationSystem paymentAuthorizationSystem = new PaymentAuthorizationSystem();
 	

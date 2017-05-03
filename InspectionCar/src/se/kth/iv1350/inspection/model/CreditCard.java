@@ -11,6 +11,10 @@ public class CreditCard {
 	public CreditCard(int pin, String number, String holder, int expireDate, int CVC){
 		
 	}
+	
+	public String getHolder(){
+		return this.holder;
+	}
 
 	public int getPin(){
 		return this.pin;

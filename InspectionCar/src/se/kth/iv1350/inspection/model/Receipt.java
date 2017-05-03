@@ -4,7 +4,7 @@ public class Receipt {
 
 	
 	public Receipt(double cost){
-		//This is a Receipt with the cost and creditCard information
+		//This is a Receipt with the cost on it.
 		
 	}
 }
