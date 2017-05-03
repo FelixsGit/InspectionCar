@@ -33,7 +33,7 @@ public class View {
 		controller.verifyVehicle(currentVehicleToInspect); //checks with database if this vehicle exists
 		controller.registerCardPayment(6534, "412 421 465 245", "Felix", 0317, 554, (double) 1000); //creditcard information
 		controller.fetchNextInspectionAndStoreResults(currentVehicleToInspect); 
-		controller.printCurrentResult(currentVehicleToInspect);
+		controller.printFinnalResult(currentVehicleToInspect);
 		
 	}
 }

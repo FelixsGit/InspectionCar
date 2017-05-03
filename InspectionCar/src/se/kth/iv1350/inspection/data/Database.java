@@ -1,11 +1,9 @@
 package se.kth.iv1350.inspection.data;
-
 import java.util.Arrays;
 
 import se.kth.iv1350.inspection.model.Vehicle;
 
 public class Database {
-	
 	/**
 	 * This Databse class represents a virtual database.
 	 */
