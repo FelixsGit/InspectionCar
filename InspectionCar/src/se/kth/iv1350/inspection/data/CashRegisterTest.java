@@ -1,3 +1,4 @@
+package se.kth.iv1350.inspection.data;
 import static org.junit.Assert.*;
 
 import org.junit.After;

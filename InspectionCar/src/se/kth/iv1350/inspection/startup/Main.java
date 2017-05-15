@@ -17,6 +17,7 @@ public class Main {
 		/**
 		 * Diffrent systemOperations that will be tested. 
 		 */
+		
 		view.testSystemOperations();
 	}
 
