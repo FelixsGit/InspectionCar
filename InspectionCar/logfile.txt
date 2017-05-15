@@ -1,0 +1,7 @@
+2017-maj-15 15:37:57, Exception was thrown: Vehicle with registrationnumber:1234 could not be found
+se.kth.iv1350.inspection.data.InvalidVehicleException: Vehicle with registrationnumber:1234 could not be found
+	at se.kth.iv1350.inspection.data.Database.fetchInspectionAndCost(Database.java:36)
+	at se.kth.iv1350.inspection.integration.DatabaseManager.findInspection(DatabaseManager.java:23)
+	at se.kth.iv1350.inspection.controller.Controller.verifyVehicle(Controller.java:55)
+	at se.kth.iv1350.inspection.view.View.testSystemOperations(View.java:54)
+	at se.kth.iv1350.inspection.startup.Main.main(Main.java:21)
