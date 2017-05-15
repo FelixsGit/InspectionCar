@@ -1,12 +1,13 @@
 package se.kth.iv1350.inspection.startup;
 
 import se.kth.iv1350.inspection.controller.Controller;
+import se.kth.iv1350.inspection.data.InvalidVehicleException;
 import se.kth.iv1350.inspection.view.View;
 
 public class Main {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidVehicleException {
 	
 		/**
 		 * Creates a new instance of the controller object and view objects.

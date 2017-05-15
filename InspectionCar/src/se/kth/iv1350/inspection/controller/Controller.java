@@ -1,5 +1,6 @@
 package se.kth.iv1350.inspection.controller;
 
+import se.kth.iv1350.inspection.data.InvalidVehicleException;
 import se.kth.iv1350.inspection.integration.CashRegister;
 import se.kth.iv1350.inspection.integration.DatabaseManager;
 import se.kth.iv1350.inspection.integration.Garage;
@@ -47,8 +48,9 @@ public class Controller {
 	 * 
 	 * @param registrationNumber of a vehicle
 	 * @return return the cost if there are a vehical with the registerNumber given in the paramameter in the database.
+	 * @throws InvalidVehicleException 
 	 */
-	public double verifyVehicle(String registrationNumber){
+	public double verifyVehicle(String registrationNumber) throws InvalidVehicleException{
 		Vehicle vehicle = new Vehicle(registrationNumber);
 		return databaseManager.findInspection(vehicle);
 	}
@@ -97,7 +99,10 @@ public class Controller {
 		String finnalResults = databaseManager.findFinnalResult(vehicle);
 		printer.printResult(finnalResults, registrationNumber);
 		
-		
+	}
+	public String showInspectionChecklist(String registrationNumber){
+		Vehicle vehicle = new Vehicle(registrationNumber);
+		return databaseManager.showChecklist(vehicle);
 	}
 	
 }

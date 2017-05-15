@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import se.kth.iv1350.inspection.data.Database;
+import se.kth.iv1350.inspection.data.InvalidVehicleException;
 import se.kth.iv1350.inspection.model.Vehicle;
 
 public class DatabaseTest {
@@ -28,10 +29,10 @@ public class DatabaseTest {
     }
 
     @Test
-    public void testFetchInspection() {
+    public void testFetchInspection() throws InvalidVehicleException {
         System.out.println("fetchInspection");
         double expResult = cost;
-        double result = instance.fetchInspection(vehicle);
+        double result = instance.fetchInspectionAndCost(vehicle);
         assertEquals(expResult, result, 0.0);
     }
 
