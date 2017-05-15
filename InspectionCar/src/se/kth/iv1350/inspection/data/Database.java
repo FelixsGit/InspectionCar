@@ -25,6 +25,7 @@ public class Database {
 	 * @param vehicle. The object vehical that contains the car register number.
 	 * @return if there is a match it will return the cost of the inspection, if not null. 
 	 */
+	
 	public double fetchInspectionAndCost(Vehicle vehicle) throws InvalidVehicleException {
 		for(int i = 0; i < registerdVehicles.length; i++){
 			if(vehicle.getRegistrationNumber().equals(registerdVehicles[i])){

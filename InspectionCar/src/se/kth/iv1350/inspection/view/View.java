@@ -54,8 +54,8 @@ public class View {
 		chooseVehicleToInspect();
 		for(int i = 0; i < Integer.MAX_VALUE; i++){
 			try {
-				controller.newInspection(1);//number update display with
 				System.out.println("Vehicle Found!, your cost is: " + controller.verifyVehicle(currentVehicleToInspect)+ " $"); //checks with database if this vehicle exists and returns cost
+				controller.newInspection(1);//number update display with
 				controller.registerCashPayment(1000, 1200); //what the inspection cost, what the constumer payed
 				controller.registerCardPayment(6534, "412 421 465 245", "Felix", 0317, 554, (double) 1000); //creditcard information
 				System.out.println("Your inspection checklist are: " + controller.showInspectionChecklist(currentVehicleToInspect));
@@ -66,7 +66,6 @@ public class View {
 				System.out.println(invalidVehicle.getMessage());
 				logger.logException(invalidVehicle);
 				chooseVehicleToInspect();
-		
 			}
 		}
 	}
