@@ -91,6 +91,7 @@ public class Controller {
 	 * 
 	 * @param registrationNumber of a vehical
 	 */
+	
 	public void printFinnalResult(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
 		String finnalResults = databaseManager.findFinnalResult(vehicle);

@@ -7,11 +7,11 @@ public class View {
 	
 	/** 
 	 * This Class is responsible for Controller calls, Controller class can only be called from here.
+	 * In and output of data, and calls the the controller are allowed here. 
 	 */
 	private final Controller controller;
 	
 	/**
-	 * 
 	 * @param controller. The object controller. 
 	 */
 	public View(Controller controller){
@@ -21,7 +21,7 @@ public class View {
 	/**
 	 * Thise Vehicles are in queue outside the garage, only one can be inspected at the same time, you choose who!
 	 */
-	 private static String currentVehicleToInspect = "ELF523"; 
+	 private static String currentVehicleToInspect = "LKF245"; 
 			 										//"ELF523";  Registerd vehical 
 	 											    //"LKF245"	 Registerd vehical
 	 											    //"LDK424"	 Registerd vehical

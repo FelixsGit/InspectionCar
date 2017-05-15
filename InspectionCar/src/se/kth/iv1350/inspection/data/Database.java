@@ -95,7 +95,6 @@ public class Database {
 		
 	}
 	/**
-	 * 
 	 * @param currentCompletedInspection. The inspections that was just performed
 	 * @return The finnal results of the completed inspections
 	 */

@@ -12,7 +12,7 @@ public class Printer {
 	 */
 	
 	public void printReceipt(Receipt receipt){
-		System.out.println("A receipt has been printed");
+		System.out.println("\nA receipt has been printed");
 	}
 	
 	/**
