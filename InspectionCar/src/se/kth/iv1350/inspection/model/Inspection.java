@@ -18,8 +18,6 @@ public class Inspection {
 	private String currentInspectionChecklist;
 	private String result = "-PASS";
 	
-	
-	
 	/**
 	 * @param vehicle. The object vehical that contains the car register number.
 	 * @return if there is a match it will return the cost of the inspection, if not null. 
@@ -38,11 +36,10 @@ public class Inspection {
 	}
 
 	/**
-	 * 
 	 * @param vehicle . The object that contains the car register number.
 	 * @return returns the next inspection to do. 
 	 */
-	public String fetchInspectionChecklist(Vehicle vehicle){
+	public String fetchNextInspection(Vehicle vehicle){
 		for(int i = 0; i < databaseManager.retriveRegisterdVehicels().length; i++){
 			if(vehicle.getRegistrationNumber().equals(databaseManager.retriveRegisterdVehicels()[i])){
 				for(int j = currentInspectionCounter;j < databaseManager.retriveInspectionChecklist().length; j++){
@@ -92,7 +89,7 @@ public class Inspection {
 	public String collectFinnalResults(Vehicle vehicle){
 		for(int i = 0; i < databaseManager.retriveRegisterdVehicels().length; i++){
 			if(vehicle.getRegistrationNumber().equals(databaseManager.retriveRegisterdVehicels()[i])){
-				return finnalResults;
+				return databaseManager.retriveFinnalResult();
 			}
 		}
 		return "No results found";

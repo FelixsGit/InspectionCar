@@ -79,7 +79,7 @@ public class Controller {
 	public void fetchNextInspectionAndStoreResults(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
 		for(int i = 0; i <3; i++){
-			mapCurrentResult(inspection.fetchInspectionChecklist(vehicle));
+			mapCurrentResult(inspection.fetchNextInspection(vehicle));
 		}
 	}
 	/**

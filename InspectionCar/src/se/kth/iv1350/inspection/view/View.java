@@ -47,8 +47,7 @@ public class View {
 	}
 	
 	/**
-	 *  This method tests diffrent system operations depending on what vehical you choose to inspect
-	 *  
+	 *  This method tests diffrent system operations for the vehical you choose to inspect
 	 */
 	public void testSystemOperations(){
 		chooseVehicleToInspect();
@@ -59,7 +58,7 @@ public class View {
 				controller.registerCashPayment(1000, 1200); //what the inspection cost, what the constumer payed
 				controller.registerCardPayment(6534, "412 421 465 245", "Felix", 0317, 554, (double) 1000); //creditcard information
 				System.out.println("Your inspection checklist are: " + controller.showInspectionChecklist(currentVehicleToInspect));
-				controller.fetchNextInspectionAndStoreResults(currentVehicleToInspect); 
+				controller.fetchNextInspectionAndStoreResults(currentVehicleToInspect);
 				controller.printFinnalResult(currentVehicleToInspect);
 				break;
 			} catch (InvalidVehicleException invalidVehicle) {
