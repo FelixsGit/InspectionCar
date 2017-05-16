@@ -79,17 +79,10 @@ public class Controller {
 	public void fetchNextInspectionAndStoreResults(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
 		for(int i = 0; i <3; i++){
-			mapCurrentResult(inspection.fetchNextInspection(vehicle));
+			inspection.saveCurrentResult(inspection.fetchNextInspection(vehicle));
 		}
 	}
-	/**
-	 * 
-	 * @param currentCompletedInspection. The inspection that was just completed. 
-	 */
-	private void mapCurrentResult(String currentCompletedInspection){
-		inspection.saveCurrentResult(currentCompletedInspection);
-		
-	}
+
 	/**
 	 * 
 	 * @param registrationNumber of a vehical

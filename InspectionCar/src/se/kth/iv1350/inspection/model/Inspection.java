@@ -10,8 +10,8 @@ public class Inspection {
 	
 	Observer observer = new InspectionStatsView();
 	DatabaseManager databaseManager = new DatabaseManager(); 
-	public int currentInspectionCounter = 0;
-	public int saveCurrentInspectionCounter = 0;
+	private int currentInspectionCounter = 0;
+	private int saveCurrentInspectionCounter = 0;
 	private String finnalResults;
 	private int foundVehicle = 0;
 	private final String[] inspectionsCompleted = new String[databaseManager.retriveInspectionChecklist().length];
@@ -49,9 +49,14 @@ public class Inspection {
 				}
 			}
 		}
-		return  "Vehicle Not In System";
-		
+		return  "Vehicle Not In System";	
 	}
+	
+	/**
+	 * Method that 
+	 * @param vehicle
+	 * @return
+	 */
 	public String checklistReturn(Vehicle vehicle){
 		for(int i = 0; i < databaseManager.retriveRegisterdVehicels().length; i++){
 			if(vehicle.getRegistrationNumber().equals(databaseManager.retriveRegisterdVehicels()[i])){
@@ -60,10 +65,12 @@ public class Inspection {
 			}
 		}
 		return  "Vehicle Not In System";
-		
 	}
+	
 	/**
-	 * @param currentCompletedInspection. The inspections that was just performed
+	 * Method that send the current inspection results via the databaseManager to be saved in the database, one after another. 
+	 * Method also sends the current inspection results via an interface to store inspection stats.  
+	 * @param currentCompletedInspection. The inspections that was just performed 
 	 * @return The finnal results of the completed inspections
 	 */
 	public String saveCurrentResult(String currentCompletedInspection) {

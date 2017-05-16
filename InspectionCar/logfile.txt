@@ -1,0 +1,6 @@
+2017-maj-16 16:47:00, Exception was thrown: Vehicle with registrationnumber:asdad could not be found
+se.kth.iv1350.inspection.model.InvalidVehicleException: Vehicle with registrationnumber:asdad could not be found
+	at se.kth.iv1350.inspection.model.Inspection.fetchInspectionAndCost(Inspection.java:33)
+	at se.kth.iv1350.inspection.controller.Controller.verifyVehicle(Controller.java:57)
+	at se.kth.iv1350.inspection.view.View.testSystemOperations(View.java:56)
+	at se.kth.iv1350.inspection.startup.Main.main(Main.java:21)

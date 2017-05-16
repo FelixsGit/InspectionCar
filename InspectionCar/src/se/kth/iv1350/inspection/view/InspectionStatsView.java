@@ -18,7 +18,6 @@ public class InspectionStatsView implements Observer  {
 			inspectionsFail++;
 		}
 		System.out.println("inspections pass = "+inspectionsPass +"  inspections fail = "+ inspectionsFail);
-	}
-	
+	}	
 }
 	
