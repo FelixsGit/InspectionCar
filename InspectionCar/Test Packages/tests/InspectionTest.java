@@ -8,9 +8,9 @@ import se.kth.iv1350.inspection.data.Database;
 import se.kth.iv1350.inspection.data.InvalidVehicleException;
 import se.kth.iv1350.inspection.model.Vehicle;
 
-public class DatabaseTest {
+public class InspectionTest {
     
-    public DatabaseTest() {
+    public InspectionTest() {
     }
     private static double cost = 1000;
     Vehicle vehicle;
@@ -19,7 +19,7 @@ public class DatabaseTest {
     @Before
     public void setUp() {
         vehicle = new Vehicle("ELF523");
-        instance = new Database();
+        instance = new Inspection();
     }
     
     @After

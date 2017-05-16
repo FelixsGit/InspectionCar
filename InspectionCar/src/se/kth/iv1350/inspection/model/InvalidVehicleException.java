@@ -1,4 +1,4 @@
-package se.kth.iv1350.inspection.data;
+package se.kth.iv1350.inspection.model;
 
 public class InvalidVehicleException extends Exception {
 	

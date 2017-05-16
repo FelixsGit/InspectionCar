@@ -1,6 +1,5 @@
 package se.kth.iv1350.inspection.controller;
 
-import se.kth.iv1350.inspection.data.InvalidVehicleException;
 import se.kth.iv1350.inspection.integration.CashRegister;
 import se.kth.iv1350.inspection.integration.DatabaseManager;
 import se.kth.iv1350.inspection.integration.Garage;
@@ -9,6 +8,8 @@ import se.kth.iv1350.inspection.integration.Printer;
 import se.kth.iv1350.inspection.model.Receipt;
 import se.kth.iv1350.inspection.model.Vehicle;
 import se.kth.iv1350.inspection.model.CreditCard;
+import se.kth.iv1350.inspection.model.Inspection;
+import se.kth.iv1350.inspection.model.InvalidVehicleException;
 
 
 
@@ -22,6 +23,7 @@ public class Controller {
 	Printer printer = new Printer();
 	DatabaseManager databaseManager = new DatabaseManager();
 	PaymentAuthorizationSystem paymentAuthorizationSystem = new PaymentAuthorizationSystem();
+	Inspection inspection = new Inspection();
 	
 	/**
 	 * 
@@ -52,7 +54,7 @@ public class Controller {
 	 */
 	public double verifyVehicle(String registrationNumber) throws InvalidVehicleException{
 		Vehicle vehicle = new Vehicle(registrationNumber);
-		return databaseManager.findInspection(vehicle);
+		return inspection.fetchInspectionAndCost(vehicle);
 	}
 	/**
 	 * 
@@ -77,7 +79,7 @@ public class Controller {
 	public void fetchNextInspectionAndStoreResults(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
 		for(int i = 0; i <3; i++){
-			mapCurrentResult(databaseManager.findInspectionChecklist(vehicle));
+			mapCurrentResult(inspection.fetchInspectionChecklist(vehicle));
 		}
 	}
 	/**
@@ -85,7 +87,7 @@ public class Controller {
 	 * @param currentCompletedInspection. The inspection that was just completed. 
 	 */
 	private void mapCurrentResult(String currentCompletedInspection){
-		databaseManager.storeCurrentResult(currentCompletedInspection);
+		inspection.saveCurrentResult(currentCompletedInspection);
 		
 	}
 	/**
@@ -95,13 +97,13 @@ public class Controller {
 	
 	public void printFinnalResult(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
-		String finnalResults = databaseManager.findFinnalResult(vehicle);
+		String finnalResults = inspection.collectFinnalResults(vehicle);
 		printer.printResult(finnalResults, registrationNumber);
 		
 	}
 	public String showInspectionChecklist(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
-		return databaseManager.showChecklist(vehicle);
+		return inspection.checklistReturn(vehicle);
 	}
 	
 }

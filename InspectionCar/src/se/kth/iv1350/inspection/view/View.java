@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import se.kth.iv1350.inspection.controller.Controller;
-import se.kth.iv1350.inspection.data.InvalidVehicleException;
+import se.kth.iv1350.inspection.model.InvalidVehicleException;
 import se.kth.iv1350.inspection.util.LogHandler;
 
 
