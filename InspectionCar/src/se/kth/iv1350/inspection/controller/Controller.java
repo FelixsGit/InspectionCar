@@ -74,12 +74,11 @@ public class Controller {
 	 * @param registrationNumber of a vehical
 	 * @return when all inspections are done return <code>"No inspectionsleft"<code>. 
 	 */
-	public String fetchNextInspectionAndStoreResults(String registrationNumber){
+	public void fetchNextInspectionAndStoreResults(String registrationNumber){
 		Vehicle vehicle = new Vehicle(registrationNumber);
 		for(int i = 0; i <3; i++){
 			mapCurrentResult(databaseManager.findInspectionChecklist(vehicle));
 		}
-		return "No inspections left";
 	}
 	/**
 	 * 

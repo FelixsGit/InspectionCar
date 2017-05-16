@@ -6,7 +6,9 @@ import se.kth.iv1350.inspection.model.Vehicle;
 
 public class DatabaseManager {
 	
-	//This Class is responsible for database calls, Database can only be called from here.
+	/**
+	 * This Class is responsible for database calls, Database can only be called from here.
+	 */
 	
 	/**
 	 * new instance of the database class.
@@ -46,6 +48,11 @@ public class DatabaseManager {
 		return database.collectFinnalResults(vehicle);
 	}
 	
+	/**
+	 * 
+	 * @param vehicle. Vehicle with a specific registrationNumber is entered to find the corresponding final inspection checklist.
+	 * @return Returns the inspection Checklist storred in the database.
+	 */
 	public String showChecklist(Vehicle vehicle){
 		return database.checklistReturn(vehicle);
 	}

@@ -1,7 +1,10 @@
 package se.kth.iv1350.inspection.data;
+
 import java.util.Arrays;
 
+import se.kth.iv1350.inspection.integration.Observer;
 import se.kth.iv1350.inspection.model.Vehicle;
+import se.kth.iv1350.inspection.view.InspectionStatsView;
 
 public class Database {
 	
@@ -18,10 +21,9 @@ public class Database {
 	private String finnalResults;
 	private int foundVehicle = 0;
 	private String currentInspectionChecklist;
-	
+	private String result = "-PASS";
 	
 	/**
-	 * 
 	 * @param vehicle. The object vehical that contains the car register number.
 	 * @return if there is a match it will return the cost of the inspection, if not null. 
 	 */
@@ -49,7 +51,6 @@ public class Database {
 			if(vehicle.getRegistrationNumber().equals(registerdVehicles[i])){
 				for(int j = currentInspectionCounter;j < inspectionChecklist.length; j++){
 					String nextInspection = inspectionChecklist[i][j];
-					System.out.println("Working on: "+nextInspection);
 					currentInspectionCounter++;
 					return nextInspection;
 				}
@@ -73,12 +74,14 @@ public class Database {
 	 * @return The finnal results of the completed inspections
 	 */
 	public String saveCurrentResult(String currentCompletedInspection) {
+		Observer observer = new InspectionStatsView();
 		for(int i = saveCurrentInspectionCounter; i<inspectionChecklist.length; i++){
 			if(currentCompletedInspection == "Vehicle Not In System"){
 				break;
 			}
-			inspectionsCompleted[i] = currentCompletedInspection + " -PASS";
-			System.out.println("saving results for-------"+currentCompletedInspection+"--------");
+			inspectionsCompleted[i] = currentCompletedInspection + result;
+			System.out.println("\nsaving results for-------"+currentCompletedInspection+"--------");
+			observer.CountPassOrFail(result);
 			saveCurrentInspectionCounter++;
 			break;
 		}
@@ -99,4 +102,5 @@ public class Database {
 		}
 		return "No results found";
 	}
+	
 }
