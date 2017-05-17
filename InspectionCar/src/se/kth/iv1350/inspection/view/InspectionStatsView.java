@@ -1,13 +1,14 @@
 package se.kth.iv1350.inspection.view;
 
-import se.kth.iv1350.inspection.integration.Observer;
+import se.kth.iv1350.inspection.integration.CountStatsObserver;
 
-public class InspectionStatsView implements Observer  {
+
+public class InspectionStatsView implements CountStatsObserver  {
 	
 	private static int inspectionsPass = 0;
 	private static int inspectionsFail  = 0;
 	
-	@Override
+	
 	public void CountPassOrFail(String result) {
 		
 		if(result.equals("-PASS")){
@@ -18,6 +19,6 @@ public class InspectionStatsView implements Observer  {
 			inspectionsFail++;
 		}
 		System.out.println("inspections pass = "+inspectionsPass +"  inspections fail = "+ inspectionsFail);
-	}	
+	}
 }
 	

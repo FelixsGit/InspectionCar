@@ -9,7 +9,7 @@ import java.time.format.FormatStyle;
 
 /**
  * 
- * This class is responisble for the "log".
+ * This class is responisble for the logging information when a exception was triggered. 
  *
  */
 

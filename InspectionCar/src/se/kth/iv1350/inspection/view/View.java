@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import se.kth.iv1350.inspection.controller.Controller;
+
 import se.kth.iv1350.inspection.model.InvalidVehicleException;
 import se.kth.iv1350.inspection.util.LogHandler;
 
@@ -24,6 +25,7 @@ public class View {
 	 */
 	public View(Controller controller){
 		this.controller = controller;
+		controller.addCountStatsObserver(new InspectionStatsView());
 		try {
 			logger = new LogHandler();
 		} catch (IOException e) {
