@@ -20,6 +20,8 @@ public class View {
 	LogHandler logger;
 	
 	/**
+	 * The constructor sets the  controller object and adds a observer to the program.
+	 * It also tries to catch an IOexception when creating a new logger.  
 	 * @param controller. The object controller. 
 	 * If there is a logging error logging will be ignored. (ignoring the nullpointer exception)
 	 */
