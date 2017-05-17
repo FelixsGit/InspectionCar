@@ -1,7 +1,7 @@
 package se.kth.iv1350.inspection.controller;
 
 
-import org.omg.Messaging.SyncScopeHelper;
+
 
 import se.kth.iv1350.inspection.integration.CashRegister;
 import se.kth.iv1350.inspection.integration.CountStatsObserver;

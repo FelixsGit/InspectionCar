@@ -83,7 +83,7 @@ public class Inspection {
 	 * @return The finnal results of the completed inspections
 	 */
 	public String saveCurrentResult(String currentCompletedInspection) {
-		for(int i = saveCurrentInspectionCounter; i<databaseManager.retriveInspectionChecklist().length; i++){
+		for(int i = saveCurrentInspectionCounter; i<databaseManager.retriveInspectionChecklist().length;){
 			if(currentCompletedInspection == "Vehicle Not In System"){
 				break;
 			}
@@ -91,11 +91,11 @@ public class Inspection {
 			System.out.println("Preparing next inspection--"+currentCompletedInspection+"--------");
 			System.out.println("\nsaving results for-------"+currentCompletedInspection+"--------");
 			saveCurrentInspectionCounter++;
-			notifyObservers(result);
 			break;
 		}
 		databaseManager.saveCurrentResult(inspectionsCompleted);
 		finnalResults = Arrays.toString(inspectionsCompleted);
+		notifyObservers(result);
 		return finnalResults;	
 	}
 	/**
